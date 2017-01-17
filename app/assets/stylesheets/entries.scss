@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+  background: rgba(154, 157, 174, 0.17);
+}
+
 .entries-container {
   width: 100%;
   height: 80vh;
@@ -15,15 +19,23 @@
   }
   
   .entry {
-    background: rgba(0, 71, 76, 0.9);
     width: 40%;
     height: 100%;
-    padding: 20px;
     display: inline-block;
 
-    textarea{
+    .entry-editor {
       width: 100%;
       height: 100%;
+
+      &#entry_one {
+        background-color: white;
+        color: black;
+      }
+
+      &#entry_two {
+        background-color: black;
+        color: white;
+      }
     }
   }
 }
