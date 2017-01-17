@@ -1,0 +1,9 @@
+<div class="entries-container">
+  <div class="entry-date"><%= @date.to_s :long %></div>
+  <div class="entry">
+    <textarea><%= @entries.first.text %></textarea>
+  </div>
+  <div class="entry">
+    <textarea><%= @entries.second.text %></textarea>
+  </div>
+</div>
