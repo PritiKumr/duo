@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'entries/index'
+  resources :entries, only: [:index, :update]
 
   root to: 'entries#index'
 

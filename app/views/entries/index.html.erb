@@ -1,9 +1,8 @@
 <div class="entries-container">
   <div class="entry-date"><%= @date.to_s :long %></div>
-  <div class="entry">
-    <div class="entry-editor" id="entry_one"><%= @entries.first.text %></div>
-  </div>
-  <div class="entry">
-    <div class="entry-editor" id="entry_two"><%= @entries.second.text %></div>
-  </div>
+  <% @entries.each do |entry| %>
+    <div class="entry">
+      <div class="entry-editor" data-url="<%= entry_path(entry) %>"><%= entry.text %></div>
+    </div>  
+  <% end %>
 </div>
