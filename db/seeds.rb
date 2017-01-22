@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Account.create.tap do |account|
+  account.users.create name: 'Robo'
+  account.users.create name: 'Preeto'
+end
