@@ -6,7 +6,6 @@ quillOptions =
   theme: 'bubble'
 
 setupQuill = (container) ->
-  console.log container
   editor = new Quill container, quillOptions
   editor.on 'text-change', (delta, oldDelta, source) ->
     editor.getText()
