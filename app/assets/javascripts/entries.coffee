@@ -1,5 +1,5 @@
 $ ->
-  $.each document.getElementsByClassName('entry-editor'), (i, el) ->
+  $('.entry-editor').each (i, el) ->
     setupQuill el
 
 quillOptions =
@@ -7,5 +7,12 @@ quillOptions =
 
 setupQuill = (container) ->
   editor = new Quill container, quillOptions
-  editor.on 'text-change', (delta, oldDelta, source) ->
-    editor.getText()
+  editor.on 'text-change', DuoUtils.debounce (delta, oldDelta, source) ->
+    $.ajax 
+      url: container.getAttribute('data-url')
+      data:
+        entry:
+          text: editor.getText()
+      method: 'PUT'
+      dataType: 'json'
+  , 2000
