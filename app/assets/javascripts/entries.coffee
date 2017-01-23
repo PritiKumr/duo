@@ -12,7 +12,7 @@ setupQuill = (container) ->
       url: container.getAttribute('data-url')
       data:
         entry:
-          text: editor.getText()
+          text: container.firstChild.innerHTML
       method: 'PUT'
       dataType: 'json'
   , 2000
