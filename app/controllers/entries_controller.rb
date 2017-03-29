@@ -1,6 +1,6 @@
 class EntriesController < ApplicationController
   def index
-    @date = Date.today
+    @date = selected_date
     @entries = current_partners.map { |partner|  
       partner.entry_for date: @date
     }
@@ -13,6 +13,10 @@ class EntriesController < ApplicationController
   end
 
   private
+
+  def selected_date
+    Date.parse(params[:date] || Date.today)
+  end
 
   def current_partners
     @_current_partners ||= current_account.partners
