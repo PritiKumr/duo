@@ -15,7 +15,7 @@ class EntriesController < ApplicationController
   private
 
   def selected_date
-    Date.parse(params[:date] || Date.today)
+    Date.parse(params[:date]) rescue Date.today
   end
 
   def current_partners
