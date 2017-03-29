@@ -4,6 +4,7 @@ development:
   database: duo_development
   pool: 5
   username: robby
+  username: password
 
 test: &test
   adapter: postgresql
