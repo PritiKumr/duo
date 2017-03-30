@@ -24,4 +24,17 @@
       width: 50px;  
     }   
   }
+
+  .user-details {
+    float: right;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-size: 20px;
+    height: 100%;
+    line-height: 35px;
+    .logout {
+      margin-left: 10px;
+      color: #878787;
+    }
+  }
 }

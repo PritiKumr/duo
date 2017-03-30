@@ -3,21 +3,24 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .header {
+  font-size: 26px;
+  font-style: italic;
+
   .entry-date {
-    font-size: 26px;
-    float: right;
     display: inline-block;
     line-height: 35px;
-    font-style: italic;
+    vertical-align: bottom;
+    margin-left: 12px;
     a {
       cursor: pointer;
+      height: 35px;
+      line-height: 40px;
     }
 
     input {
       position: absolute;
       opacity: 0;
       top: 55px;
-      right: 42px;
     }
   }
 }
@@ -48,6 +51,7 @@
       width: 100%;
       height: 100%;
       font-size: 21px;
+      line-height: 1.6!important;
       padding: 40px;
       padding-top: 15px;
 
