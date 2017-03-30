@@ -1,5 +1,5 @@
 class EntriesController < ApplicationController
-  before_action :authenticate_user!, :set_user
+  before_action :authenticate_user!
   
   def index
     @date = selected_date
@@ -14,6 +14,10 @@ class EntriesController < ApplicationController
     head :ok
   end
 
+  def set_user
+    render json: {user: current_user}
+  end
+
   private
 
   def selected_date
@@ -26,9 +30,5 @@ class EntriesController < ApplicationController
 
   def entry_params
     params.require(:entry).permit(:id, :text)
-  end
-
-  def set_user
-    session[:user] = current_user.name if user_signed_in?
   end
 end
