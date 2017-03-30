@@ -31,7 +31,7 @@ class EntriesController < ApplicationController
 
   def time_expired? entry
     Time.use_zone current_account.tz do
-      entry.date.end_of_day + expiry_offset < DateTime.now
+      entry.date.end_of_day + expiry_offset < Time.current
     end
   end
 
@@ -41,7 +41,7 @@ class EntriesController < ApplicationController
 
   def selected_date
     Time.use_zone current_account.tz do
-      Date.parse(params[:date]) rescue Date.today  
+      Date.parse(params[:date]) rescue Date.current
     end
   end
 
