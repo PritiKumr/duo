@@ -10,8 +10,9 @@
   .entry-date {
     font-size: 26px;
     padding: 60px;
-    padding-bottom: 25px;
+    padding-bottom: 40px;
     font-style: italic;
+    padding-top: 40px;
   }
   
   .entry {
@@ -19,11 +20,24 @@
     height: 100%;
     display: inline-block;
 
+    .author-name {
+      position: relative;
+      top: 10px;
+      left: 55px;
+      text-align: left;
+      font-size: 18px;
+      font-style: italic;
+      color: #b3b3b3;
+      z-index: 9999;
+      width: 200px;
+    }
+
     .entry-editor {
       width: 100%;
       height: 100%;
       font-size: 21px;
       padding: 40px;
+      padding-top: 15px;
 
       &#entry_one {
         background-color: white;
