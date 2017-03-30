@@ -12,5 +12,6 @@
  *
  *= require reset
  *= require entries
+ *= require auth
  *= require_self
  */
