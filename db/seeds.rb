@@ -7,6 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Account.create.tap do |account|
-  account.users.create name: 'Robo'
-  account.users.create name: 'Preeto'
+  account.users.create name: 'Robo', email: 'steve@duo.com', password: 'password', , password_confirmation: 'password'
+  account.users.create name: 'Preeto', email: 'preethi@duo.com', password: 'password', , password_confirmation: 'password'
 end
