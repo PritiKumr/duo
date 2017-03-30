@@ -9,6 +9,16 @@
     display: inline-block;
     line-height: 35px;
     font-style: italic;
+    a {
+      cursor: pointer;
+    }
+
+    input {
+      position: absolute;
+      opacity: 0;
+      top: 55px;
+      right: 42px;
+    }
   }
 }
 
