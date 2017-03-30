@@ -7,9 +7,6 @@ $ ->
       $('.entry-editor').each (i, el) ->
         setupQuill(el, data.user.name)
 
-  $('.entry-date').click ->
-    $( "#datepicker" ).datepicker()
-
 quillOptions =
   theme: 'bubble'
 
