@@ -30,7 +30,7 @@ class EntriesController < ApplicationController
   end
 
   def time_expired? entry
-    entry.date.end_of_day + expiry_offset < DateTime.now
+    entry.date.end_of_day + expiry_offset < DateTime.now.utc
   end
 
   def expiry_offset
