@@ -1,6 +1,6 @@
 $ ->
-  $('.entry-date').click ->
-    $( "#datepicker" ).datepicker()
+  $('.entry-editor').each (i, el) ->
+    setupQuill el
 
   flatpickr ".datepicker", 
     wrap: true
@@ -10,7 +10,9 @@ $ ->
 quillOptions =
   theme: 'bubble'
 
-setupQuill = (container, userName) ->
+setupQuill = (container) ->
+  quillOptions['readOnly'] = (container.getAttribute('data-disabled') == 'true')
+
   editor = new Quill container, quillOptions
   editor.on 'text-change', DuoUtils.debounce (delta, oldDelta, source) ->
     $.ajax 
