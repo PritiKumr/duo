@@ -3,7 +3,7 @@
   <% @entries.each do |entry| %>
     <div class="entry">
       <div class="author-name"><%= entry.author_name %></div>
-      <div class="entry-editor" style="background-color: <%= entry.user.bg_color %>; color: <%= entry.user.fg_color %>;" data-url="<%= entry_path(entry) %>"><%= entry.text.html_safe %></div>
+      <div class="entry-editor" style="background-color: <%= entry.user.bg_color %>; color: <%= entry.user.fg_color %>;" data-url="<%= entry_path(entry) %>" current-user="<%= entry.author_name %>"><%= entry.text.html_safe %></div>
     </div>  
   <% end %>
 </div>

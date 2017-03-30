@@ -1,5 +1,5 @@
 class EntriesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :set_user
   
   def index
     @date = selected_date
@@ -26,5 +26,9 @@ class EntriesController < ApplicationController
 
   def entry_params
     params.require(:entry).permit(:id, :text)
+  end
+
+  def set_user
+    session[:user] = current_user.name if user_signed_in?
   end
 end

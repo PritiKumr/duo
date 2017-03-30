@@ -16,3 +16,6 @@ setupQuill = (container) ->
       method: 'PUT'
       dataType: 'json'
   , 2000
+  
+  if container.getAttribute('current-user') != sessionStorage['user']
+    editor.enable false
