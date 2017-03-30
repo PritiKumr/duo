@@ -12,7 +12,71 @@
   .logo-container{
     margin: auto;
     margin-bottom: 10px;
-    width:200px;
-    height:30px;
+  }
+}
+
+.auth-title {
+  font-family: 'Open Sans', sans-serif;
+  color: #878787;
+  font-weight: bold;
+  margin-top: 35px;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+#auth-form {
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+      transition: background-color 5000s ease-in-out 0s;
+  }
+
+  input {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      background: none;
+      outline: none;
+      resize: none;
+      border: 0;
+      transition: all .3s;
+      border-bottom: 2px solid #878787;
+      font-size: 18px;
+      font-family: 'Lora', serif;
+  }
+  input:focus {
+      border-bottom: 2px solid #6b6969
+  }
+  p:before {
+      content: attr(type);
+      display: block;
+      margin: 28px 0 0;
+      font-size: 14px;
+      color: #878787;
+      font-family: 'Open Sans', sans-serif;
+      text-align: left;
+      text-transform: uppercase;
+  }
+
+  .actions{
+    margin-top: 15px;
+
+    input[type="submit"] {
+        float: right;
+        padding: 8px 12px;
+        margin: 8px 0 0;
+        border: 2px solid #78788c;
+        background: 0;
+        color: #6b6969;
+        cursor: pointer;
+        transition: all .3s;
+        font-family: 'Open Sans', sans-serif;
+        text-transform: uppercase;
+    }
+    input[type="submit"]:hover {
+        background: #6b6969;
+        color: #fff
+    }
   }
 }
