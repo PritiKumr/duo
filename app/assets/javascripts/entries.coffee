@@ -1,15 +1,7 @@
 $ ->
-  $.ajax
-    url: '/user/detail'
-    method: 'GET'
-    dataType: 'json'
-    success: (data) ->
-      $('.entry-editor').each (i, el) ->
-        setupQuill(el, data.user.name)
-
-  $('.entry-date').click ->
-    $( "#datepicker" ).datepicker()
-
+  $('.entry-editor').each (i, el) ->
+    setupQuill el
+ 
   flatpickr ".datepicker", 
     wrap: true
     onChange: (_, date) ->
@@ -19,7 +11,9 @@ $ ->
 quillOptions =
   theme: 'bubble'
 
-setupQuill = (container, userName) ->
+setupQuill = (container) ->
+  quillOptions['readOnly'] = (container.getAttribute('data-disabled') == 'true')
+
   editor = new Quill container, quillOptions
   editor.on 'text-change', DuoUtils.debounce (delta, oldDelta, source) ->
     $.ajax 
@@ -30,6 +24,3 @@ setupQuill = (container, userName) ->
       method: 'PUT'
       dataType: 'json'
   , 2000
-  
-  if container.getAttribute('current-user') != userName
-    editor.enable false
