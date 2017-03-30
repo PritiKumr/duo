@@ -2,10 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
-  background: rgba(154, 157, 174, 0.17);
-}
-
 .entries-container {
   width: 100%;
   height: 80vh;
@@ -13,19 +9,21 @@ body {
 
   .entry-date {
     font-size: 26px;
-    padding: 14px;
-    font-weight: bold;
+    padding: 60px;
+    padding-bottom: 25px;
     font-style: italic;
   }
   
   .entry {
-    width: 40%;
+    width: 48%;
     height: 100%;
     display: inline-block;
 
     .entry-editor {
       width: 100%;
       height: 100%;
+      font-size: 21px;
+      padding: 40px;
 
       &#entry_one {
         background-color: white;
