@@ -1,5 +1,8 @@
-<div class="entries-container">
+<div class="header">
+  <div class="logo"><%= image_tag image_path('duo_circles.png') %></div>
   <div class="entry-date"><%= @date.to_s :long %></div>
+</div>
+<div class="entries-container">
   <% @entries.each do |entry| %>
     <div class="entry">
       <div class="author-name"><%= entry.author_name %></div>

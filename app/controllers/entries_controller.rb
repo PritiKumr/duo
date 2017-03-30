@@ -1,5 +1,5 @@
 class EntriesController < ApplicationController
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
   
   def index
     @date = selected_date
