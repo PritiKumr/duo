@@ -1,6 +1,6 @@
 class EntriesController < ApplicationController
   before_action :authenticate_user!
-  helper_method :can_edit?
+  helper_method :is_valid?
   
   def index
     @date = selected_date
@@ -21,8 +21,20 @@ class EntriesController < ApplicationController
 
   private
 
+  def is_valid? entry
+    !can_edit?(entry) || time_expired?(entry)
+  end
+
   def can_edit? entry
     current_user == entry.user
+  end
+
+  def time_expired? entry
+    entry.date.end_of_day + expiry_offset < DateTime.now
+  end
+
+  def expiry_offset
+    3.hours
   end
 
   def selected_date
