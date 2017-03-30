@@ -15,16 +15,9 @@
   }
 }
 
-.auth-title {
-  font-family: 'Open Sans', sans-serif;
-  color: #878787;
-  font-weight: bold;
-  margin-top: 35px;
-  font-size: 24px;
-  text-transform: uppercase;
-}
-
 #auth-form {
+  margin-top: 60px;
+
   input:-webkit-autofill,
   input:-webkit-autofill:hover,
   input:-webkit-autofill:focus,

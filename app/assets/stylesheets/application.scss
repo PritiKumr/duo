@@ -15,3 +15,13 @@
  *= require auth
  *= require_self
  */
+
+.header {
+  padding: 40px;
+  .logo {
+    display: inline-block;
+    img{
+      width: 50px;  
+    }   
+  }
+}
