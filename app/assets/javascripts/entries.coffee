@@ -1,13 +1,11 @@
 $ ->
-  userName = undefined
   $.ajax
     url: '/user/detail'
     method: 'GET'
     dataType: 'json'
     success: (data) ->
-      userName = data.user.name
       $('.entry-editor').each (i, el) ->
-        setupQuill(el, userName)
+        setupQuill(el, data.user.name)
 
   $('.entry-date').click ->
     $( "#datepicker" ).datepicker()
