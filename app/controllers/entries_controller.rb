@@ -1,5 +1,6 @@
 class EntriesController < ApplicationController
   before_action :authenticate_user!
+  helper_method :can_edit?
   
   def index
     @date = selected_date
@@ -19,6 +20,10 @@ class EntriesController < ApplicationController
   end
 
   private
+
+  def can_edit? entry
+    current_user == entry.user
+  end
 
   def selected_date
     Date.parse(params[:date]) rescue Date.today
