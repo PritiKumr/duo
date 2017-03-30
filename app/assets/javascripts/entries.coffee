@@ -10,6 +10,12 @@ $ ->
   $('.entry-date').click ->
     $( "#datepicker" ).datepicker()
 
+  flatpickr ".datepicker", 
+    wrap: true
+    onChange: (_, date) ->
+      window.location.href = date
+
+
 quillOptions =
   theme: 'bubble'
 

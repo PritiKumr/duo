@@ -3,16 +3,20 @@
   <head>
     <title>Duo</title>
     <%= csrf_meta_tags %>
+    
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <script src="//cdn.quilljs.com/1.1.10/quill.min.js"></script>
     <link href="//cdn.quilljs.com/1.1.10/quill.bubble.css" rel="stylesheet">
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
+    <link rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css">
   </head>
 
   <body>
+    
     <%= yield %>
+
+    <script src="//cdn.quilljs.com/1.1.10/quill.min.js"></script>
+    <script src="https://unpkg.com/flatpickr"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>
