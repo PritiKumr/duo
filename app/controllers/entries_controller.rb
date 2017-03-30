@@ -14,7 +14,7 @@ class EntriesController < ApplicationController
     head :ok
   end
 
-  def set_user
+  def user_detail
     render json: {user: current_user}
   end
 
