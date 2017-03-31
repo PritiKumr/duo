@@ -2,6 +2,11 @@ $ ->
   $('.entry-editor').each (i, el) ->
     setupQuill el
 
+  $('.ql-editor').atwho
+      at: "@",
+      data:['Peter', 'Tom', 'Anne']
+      editableAtwhoQueryAttrs: { "data-fr-verified": true }
+
   flatpickr ".datepicker", 
     wrap: true
     onChange: (_, date) ->

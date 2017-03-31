@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.atwho
 //= require cable
 //= require utils
 //= require entries

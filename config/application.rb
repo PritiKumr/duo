@@ -8,6 +8,5 @@ Bundler.require(*Rails.groups)
 
 module Duo
   class Application < Rails::Application
-    config.time_zone = "Asia/Kolkata"
   end
 end
