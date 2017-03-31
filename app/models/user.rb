@@ -5,6 +5,8 @@ class User < ApplicationRecord
   belongs_to :account
   has_many :entries
 
+  default_scope -> { order 'id' }
+
   def entry_for date:
     entries.find_or_create_by date: date
   end
