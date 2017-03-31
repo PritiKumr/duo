@@ -11,6 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  *= require reset
+ *= require jquery.atwho
  *= require entries
  *= require auth
  *= require_self
