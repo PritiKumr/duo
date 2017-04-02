@@ -5,7 +5,7 @@ $ ->
   flatpickr ".datepicker", 
     wrap: true
     onChange: (_, date) ->
-      window.location.href = date
+      Turbolinks.visit date
 
 quillOptions =
   theme: 'bubble'
