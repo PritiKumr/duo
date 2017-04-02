@@ -4,6 +4,7 @@ $ ->
 
   flatpickr ".datepicker", 
     wrap: true
+    maxDate: new Date()
     onChange: (_, date) ->
       Turbolinks.visit date
 
