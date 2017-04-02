@@ -3,10 +3,11 @@ class EntriesController < ApplicationController
   helper_method :editing_locked?
   
   def index
-    @date = selected_date
-    @entries = current_partners.map { |partner|  
-      partner.entry_for date: @date
-    }
+    validate_and_set_date.tap do |date|
+      @entries = current_partners.map { |partner|  
+        partner.entry_for date: date
+      }
+    end
   end
 
   def update
@@ -39,9 +40,11 @@ class EntriesController < ApplicationController
     8.hours
   end
 
-  def selected_date
-    Time.use_zone current_account.tz do
-      Date.parse(params[:date]) rescue Date.current
+  def validate_and_set_date
+    @date = Time.use_zone current_account.tz do
+      Date.parse(params[:date]).tap do |date|
+        raise! if date.future?
+      end rescue Date.current
     end
   end
 
