@@ -12,6 +12,12 @@
   .logo-container{
     margin: auto;
     margin-bottom: 10px;
+
+    @media screen and (max-width: $break-small) {
+      img {
+        width: 100%;
+      }
+    }
   }
 }
 
