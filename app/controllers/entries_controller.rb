@@ -1,6 +1,7 @@
 class EntriesController < ApplicationController
   before_action :authenticate_user!
   helper_method :editing_locked?
+  helper_method :current_user_author?
   
   def index
     validate_and_set_date.tap do |date|
