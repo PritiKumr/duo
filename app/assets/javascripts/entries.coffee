@@ -8,6 +8,14 @@ $ ->
     onChange: (_, date) ->
       Turbolinks.visit date
 
+  $('.entry-authors .author-name').on 'click', (e) ->
+    tab = $(@)
+    entryId = tab.data('entry')
+    console.log entryId
+    $('.entry-authors, .entry').removeClass 'active'
+    tab.parent().addClass 'active'
+    $(entryId).addClass 'active'
+
 quillOptions =
   theme: 'bubble'
 
