@@ -18,7 +18,7 @@ $ ->
 
 setupEditor = (container) ->
   editorOptions = 
-    disableEditing: container.getAttribute('data-disabled') == 'true'
+    disableEditing: false #container.getAttribute('data-disabled') == 'true'
     placeholder: false
 
   editor = new MediumEditor container, editorOptions
