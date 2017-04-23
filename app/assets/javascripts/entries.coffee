@@ -12,8 +12,17 @@ $ ->
 
   flatpickr ".datepicker", 
     wrap: true
+    maxDate: new Date()
     onChange: (_, date) ->
-      window.location.href = date
+      Turbolinks.visit date
+
+  $('.entry-authors .author-name').on 'click', (e) ->
+    tab = $(@)
+    entryId = tab.data('entry')
+    console.log entryId
+    $('.entry-authors, .entry').removeClass 'active'
+    tab.parent().addClass 'active'
+    $(entryId).addClass 'active'
 
 # toolbar =
 #   theme: 'bubble'

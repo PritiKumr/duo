@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -19,6 +20,10 @@
  *= require medium-editor-insert-plugin-frontend
  *= require_self
  */
+@import 'variables';
+@import 'reset';
+@import 'entries';
+@import 'auth';
 
 .header {
   padding: 40px;
@@ -41,8 +46,28 @@
       color: #878787;
     }
   }
+
+
+  @media screen and (max-width: $break-small) {
+    padding: 15px;
+    .logo {
+      img{
+        width: 40px;  
+      }   
+    }
+
+    .user-details {
+      font-size: 15px;
+    }    
+  }
 }
 
 .medium-editor-element {
   margin-top: 20px;
+}
+
+
+.turbolinks-progress-bar {
+  height: 2px;
+  background-color: #878787;
 }
