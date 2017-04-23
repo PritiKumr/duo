@@ -110,3 +110,14 @@
 [contenteditable]:focus {
   outline: 0px solid transparent;
 }
+
+// Medium Editor Theme Overrides
+
+.medium-editor-toolbar li button {
+  color: rgb(160, 160, 160) !important;
+  line-height: 0 !important;
+}
+
+.medium-editor-toolbar li .medium-editor-button-active, .medium-editor-toolbar li button:hover {
+  color: white !important;
+}
