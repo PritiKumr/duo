@@ -90,6 +90,31 @@
         padding: 40px;
         padding-top: 15px;
         line-height: 1.58;
+
+        a {
+          color: black;
+        }
+
+        blockquote {
+          // copied from Medium.com
+          --x-height-multiplier: 0.35;
+          --baseline-multiplier: 0.179;
+          letter-spacing: .01rem;
+          font-weight: 400;
+          font-style: italic;
+          font-size: 21px;
+          line-height: 1.58;
+          letter-spacing: -.003em;
+          border-left: 3px solid rgb(135, 135, 135);
+          color: rgb(135, 135, 135);
+          padding-left: 20px;
+          margin-left: 20px;
+          padding-bottom: 2px;
+
+          a {
+            color: rgb(135, 135, 135);
+          }
+        }
       }
 
       @media screen and (max-width: $break-small) {
@@ -120,4 +145,8 @@
 
 .medium-editor-toolbar li .medium-editor-button-active, .medium-editor-toolbar li button:hover {
   color: white !important;
+}
+
+.medium-editor-anchor-preview a {
+  margin: 5px 5px 5px !important;
 }
