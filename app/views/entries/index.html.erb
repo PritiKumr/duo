@@ -19,10 +19,10 @@
 
   <div class="entries">
     <div class="entry <%= 'active' if current_user_author?(@entries.first) %>" id="entry_<%= @entries.first.id %>">
-      <div class="entry-editor" data-url="<%= entry_path(@entries.first) %>" data-disabled="<%= editing_locked?(@entries.first) %>"><%= @entries.first.text.html_safe %></div>
+      <div id="entry_editor_<%= @entries.first.id %>" class="entry-editor" data-url="<%= entry_path(@entries.first) %>" data-disabled="<%= editing_locked?(@entries.first) %>"><%= @entries.first.text.html_safe %></div>
     </div>
     <div class="entry <%= 'active' if current_user_author?(@entries.second) %>" id="entry_<%= @entries.second.id %>">
-      <div class="entry-editor" data-url="<%= entry_path(@entries.second) %>" data-disabled="<%= editing_locked?(@entries.second) %>"><%= @entries.second.text.html_safe %></div>
+      <div id="entry_editor_<%= @entries.second.id %>" class="entry-editor" data-url="<%= entry_path(@entries.second) %>" data-disabled="<%= editing_locked?(@entries.second) %>"><%= @entries.second.text.html_safe %></div>
     </div>
   </div>
 </div>

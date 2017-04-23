@@ -14,7 +14,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery.atwho
+//= require medium-editor
+//= require handlebars/handlebars.runtime
+//= require blueimp-file-upload/vendor/jquery.ui.widget
+//= require blueimp-file-upload/jquery.iframe-transport
+//= require blueimp-file-upload/jquery.fileupload.js
+//= require jquery-sortable
+//= require medium-editor-insert-plugin
 //= require cable
 //= require utils
 //= require entries
-

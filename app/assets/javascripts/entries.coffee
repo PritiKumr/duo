@@ -18,11 +18,10 @@ $ ->
 
 setupEditor = (container) ->
   lockEditing = container.getAttribute('data-disabled') == 'true'
-
   editorOptions = 
     disableEditing: lockEditing
-    toolbar: not lockEditing
     placeholder: false
+    toolbar: not lockEditing
 
   editor = new MediumEditor container, editorOptions
 
@@ -31,7 +30,8 @@ setupEditor = (container) ->
       url: container.getAttribute('data-url')
       data:
         entry:
-          text: editorElement.innerHTML
+          text: editor.serialize()["#{container.id}"].value
       method: 'PUT'
       dataType: 'json'
   , 2000
+  

@@ -30,6 +30,11 @@ gem 'devise', '~> 4.2'
 # Emoji
 gem 'jquery-atwho-rails', '~> 1.3'
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-blueimp-file-upload'
+  gem 'rails-assets-handlebars'
+end
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

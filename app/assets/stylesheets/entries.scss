@@ -85,11 +85,12 @@
       
       .entry-editor {
         width: 90%;
-        height: 100%;
         font-size: 21px;
         padding: 40px;
         padding-top: 15px;
         line-height: 1.58;
+        position: relative; 
+        height: auto;
 
         a {
           color: black;
