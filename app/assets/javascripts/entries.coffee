@@ -17,8 +17,11 @@ $ ->
     $(entryId).addClass 'active'
 
 setupEditor = (container) ->
+  lockEditing = container.getAttribute('data-disabled') == 'true'
+
   editorOptions = 
-    disableEditing: false #container.getAttribute('data-disabled') == 'true'
+    disableEditing: lockEditing
+    toolbar: not lockEditing
     placeholder: false
 
   editor = new MediumEditor container, editorOptions
