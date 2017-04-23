@@ -1,25 +1,49 @@
 $ ->
-  $('.entry-editor').each (i, el) ->
+  $('.editable').each (i, el) ->
     setupQuill el
 
-  $('.ql-editor').atwho
-      at: "@",
-      data:['Peter', 'Tom', 'Anne']
-      editableAtwhoQueryAttrs: { "data-fr-verified": true }
+  elements = document.querySelectorAll('.editable')
+  editor = new MediumEditor(elements)
+
+  # $('.ql-editor').atwho
+  #     at: "@",
+  #     data:['Peter', 'Tom', 'Anne']
+  #     editableAtwhoQueryAttrs: { "data-fr-verified": true }
 
   flatpickr ".datepicker", 
     wrap: true
     onChange: (_, date) ->
       window.location.href = date
 
-quillOptions =
-  theme: 'bubble'
+# toolbar =
+#   theme: 'bubble'
+  
 
 setupQuill = (container) ->
-  quillOptions['readOnly'] = (container.getAttribute('data-disabled') == 'true')
 
-  editor = new Quill container, quillOptions
-  editor.on 'text-change', DuoUtils.debounce (delta, oldDelta, source) ->
+  editor = new MediumEditor(container,
+    toolbar:
+      allowMultiParagraphSelection: true
+      buttons: [
+        'bold'
+        'italic'
+        'underline'
+        'anchor'
+        'h2'
+        'h3'
+        'quote'
+      ]
+      relativeContainer: null
+      standardizeSelectionStart: false
+      static: false
+      align: 'center'
+      sticky: false
+      updateOnEmptySelection: false
+    placeholder: text: '09iuhygv')
+  console.log container.innerHTML
+
+  editor.on 'change', ->
+    console.log container
     $.ajax 
       url: container.getAttribute('data-url')
       data:

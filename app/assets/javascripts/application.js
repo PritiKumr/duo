@@ -17,3 +17,6 @@
 //= require cable
 //= require utils
 //= require entries
+//= require medium-editor
+//= require medium-editor-insert-plugin
+

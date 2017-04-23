@@ -14,6 +14,9 @@
  *= require jquery.atwho
  *= require entries
  *= require auth
+ *= require medium-editor
+ *= require medium-editor-insert-plugin
+ *= require medium-editor-insert-plugin-frontend
  *= require_self
  */
 
@@ -38,4 +41,8 @@
       color: #878787;
     }
   }
+}
+
+.medium-editor-element {
+  margin-top: 20px;
 }
