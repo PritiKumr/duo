@@ -21,7 +21,9 @@ setupEditor = (container) ->
   editorOptions = 
     disableEditing: lockEditing
     placeholder: false
-    toolbar: not lockEditing
+    toolbar:
+      relativeContainer: container
+
 
   editor = new MediumEditor container, editorOptions
 
