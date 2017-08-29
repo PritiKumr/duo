@@ -1,29 +1,36 @@
-<h2>Sign up</h2>
+<div class="page-center is-responsive">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+  <div class="logo-container">
+    <%= image_tag image_path('logo.png') %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {id: "auth-form"}) do |f| %>
+    <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+    <p type="Name">
+      <%= f.text_field :name, autofocus: true %>
+    </p>
 
-<%= render "devise/shared/links" %>
+    <p type="Email">
+      <%= f.email_field :email, autofocus: true %>
+    </p>
+
+    <p type="Password">
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "off" %>
+    </p>
+
+    <p type="Password Confirmation">
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    </p>
+
+    <div class="actions">
+      <%= f.submit "Sign up" %>
+    </div>
+    
+  <% end %>
+
+</div>

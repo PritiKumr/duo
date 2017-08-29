@@ -1,0 +1,25 @@
+FROM ruby:2.3
+
+RUN apt-get update && apt-get install -qq -y sudo apt-utils
+
+RUN bash -c 'sudo debconf-set-selections <<< "mysql-server mysql-server/root_password password gulties193"'
+RUN bash -c 'sudo debconf-set-selections <<< "mysql-server mysql-server/root_password_again password gulties193"'
+RUN sed -i.bkp -e \
+      's/%sudo\s\+ALL=(ALL\(:ALL\)\?)\s\+ALL/%sudo ALL=NOPASSWD:ALL/g' \
+      /etc/sudoers
+      
+RUN apt-get install -qq -y dialog libcurl3 libxml2 curl  nano git --fix-missing --no-install-recommends libxml2 curl mysql-server libmysqlclient-dev mysql-client mysql-server nano git
+
+ENV INSTALL_PATH /var/www/duo
+ENV RAILS_ENV development
+ENV HOME /home/deploy
+
+RUN useradd -ms /bin/bash deploy
+RUN usermod -aG sudo deploy
+
+WORKDIR $INSTALL_PATH
+RUN chown -R deploy:deploy $INSTALL_PATH
+
+USER deploy
+ADD . $INSTALL_PATH
+RUN bundle install --system
