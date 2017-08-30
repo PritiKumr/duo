@@ -1,5 +1,6 @@
 class EntriesController < ApplicationController
   before_action :authenticate_user!
+  before_filter :check_if_account_has_two_users
   helper_method :editing_locked?
   helper_method :current_user_author?
   
@@ -22,6 +23,12 @@ class EntriesController < ApplicationController
   end
 
   private
+  
+  def check_if_account_has_two_users
+    if current_partners.count < 2
+      redirect_to new_invitation_path
+    end
+  end
 
   def editing_locked? entry
     !current_user_author?(entry) || time_expired?(entry)

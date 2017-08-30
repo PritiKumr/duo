@@ -14,6 +14,14 @@
 
   <body>
     
+    <div class="auth-div">
+      <% if user_signed_in? %>
+        <%= link_to 'Log out', destroy_user_session_path, :method => :delete, class: 'signout' %>
+      <% else %>
+        <%= link_to 'Log in', new_user_session_path, class: 'signin' %>
+      <% end -%>
+    </div>
+
     <%= yield %>
 
     <script src="//cdn.quilljs.com/1.1.10/quill.min.js"></script>

@@ -1,0 +1,13 @@
+<div class="page-center is-responsive">
+  <div class="logo-container">
+    <%= image_tag image_path('logo.png') %>
+  </div>  
+  <%= form_for(@invitation, html: { multipart: true, id: "auth-form"}) do |f| %>
+    <p type="Email">
+      <%= f.email_field :email, autofocus: true %>
+    </p>
+    <div class="actions">
+      <%= f.submit "Send Invitation" %>
+    </div>
+  <% end -%>
+</div>

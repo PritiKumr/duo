@@ -40,7 +40,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def build_resource(hash=nil)
     super hash
-    resource.build_account    
+    if action_name = "new"
+      if resource.account_id.nil?
+        resource.build_account    
+      end
+    end
   end
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
