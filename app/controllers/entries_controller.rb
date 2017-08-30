@@ -14,8 +14,12 @@ class EntriesController < ApplicationController
 
   def update
     @entry = Entry.find(params[:id])
-    @entry.update entry_params
-    head :ok
+    if @entry.update entry_params
+      ActionCable.server.broadcast 'entries',
+        entry: @entry.text,
+        id: @entry.id
+      head :ok
+    end
   end
 
   def user_detail

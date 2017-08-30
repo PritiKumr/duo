@@ -16,3 +16,4 @@
 //= require cable
 //= require utils
 //= require entries
+//= require_tree ./channels
