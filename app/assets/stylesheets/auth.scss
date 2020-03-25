@@ -31,7 +31,7 @@
       transition: background-color 5000s ease-in-out 0s;
   }
 
-  input {
+  input, a {
       width: 100%;
       padding: 10px;
       box-sizing: border-box;
@@ -44,7 +44,7 @@
       font-size: 18px;
       font-family: 'Lora', serif;
   }
-  input:focus {
+  input:focus, a:focus {
       border-bottom: 2px solid #6b6969
   }
   p:before {
@@ -61,7 +61,7 @@
   .actions{
     margin-top: 15px;
 
-    input[type="submit"] {
+    input[type="submit"], a {
         float: right;
         padding: 8px 12px;
         margin: 8px 0 0;
@@ -73,9 +73,13 @@
         font-family: 'Open Sans', sans-serif;
         text-transform: uppercase;
     }
-    input[type="submit"]:hover {
+    input[type="submit"]:hover, a:hover {
         background: #6b6969;
         color: #fff
+    }
+
+    a {
+      text-decoration:none;
     }
   }
 }

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "users/registrations" }
   resources :entries, only: [:index, :update]
   get '/:date', to: 'entries#index'
   get '/user/detail' => 'entries#user_detail'
