@@ -25,7 +25,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 # Authentication
-gem 'devise', '~> 4.2'
+gem 'devise', '~> 4.7'
 gem 'pry'
 
 group :development, :test do
